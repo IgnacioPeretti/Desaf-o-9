@@ -4,11 +4,13 @@ on:
   push:
     branches: [ "main" ]
     paths: 
-        -".github/workflows/build-container-image.yml"
+      - "Clase41/**"
+      - ".github/workflows/build-container-image.yml"
   pull_request:
     branches: [ "main" ]
     paths:
-        -".github/workflows/build-container-image.yml"
+        - "Clase41/**"
+        - ".github/workflows/build-container-image.yml"
 
 jobs:
   build-and-push:
@@ -29,11 +31,11 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v2
       with:
-        context: ${{ github.workspace }}
-        file: ${{ github.workspace }}/Dockerfile.multi
+        context: ${{ github.workspace }}/Clase41
+        file: ${{ github.workspace }}/Clase41/Dockerfile.multi
         # Asume que tu Dockerfile está en la raíz de tu repositorio
         # Si tu Dockerfile está en una ruta específica, por ejemplo, ./path/to/Dockerfile, cambia 'context' y 'file' como sigue:
         # context: ./path/to/
         # file: ./path/to/Dockerfile
-        push: false
+        push: true
         tags: ignacioperetti/nodejs-helloworld-api:latest # Cambia esto con tu nombre de usuario y nombre de imagen
