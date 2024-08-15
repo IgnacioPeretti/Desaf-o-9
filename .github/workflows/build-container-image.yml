@@ -37,5 +37,5 @@ jobs:
         # Si tu Dockerfile está en una ruta específica, por ejemplo, ./path/to/Dockerfile, cambia 'context' y 'file' como sigue:
         # context: ./path/to/
         # file: ./path/to/Dockerfile
-        push: false
+        push: true
         tags: ignacioperetti/nodejs-helloworld-api:latest # Cambia esto con tu nombre de usuario y nombre de imagen
