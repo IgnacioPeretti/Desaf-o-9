@@ -4,12 +4,12 @@ on:
   push:
     branches: [ "main" ]
     paths: 
-      - "Clase41/**"
+      - "Desafio-9/**"
       - ".github/workflows/build-container-image.yml"
   pull_request:
     branches: [ "main" ]
     paths:
-        - "Clase41/**"
+        - "Desafio-9/**"
         - ".github/workflows/build-container-image.yml"
 
 jobs:
@@ -31,8 +31,8 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v2
       with:
-        context: ${{ github.workspace }}/Clase41
-        file: ${{ github.workspace }}/Clase41/Dockerfile.multi
+        context: ${{ github.workspace }}
+        file: ${{ github.workspace }}/Dockerfile.multi
         # Asume que tu Dockerfile está en la raíz de tu repositorio
         # Si tu Dockerfile está en una ruta específica, por ejemplo, ./path/to/Dockerfile, cambia 'context' y 'file' como sigue:
         # context: ./path/to/
