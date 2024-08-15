@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [ "main" ]
     paths:
-        - "Clase41/**"
+        - "Desafio-9/**"
         - ".github/workflows/build-container-image.yml"
 
 jobs:
